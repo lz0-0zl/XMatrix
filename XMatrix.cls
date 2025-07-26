@@ -343,7 +343,7 @@ Else
   ' Fill all elements within band randomly
   For i = LBound(m_Mij, 1) To UBound(m_Mij, 1)
     For j = LBound(m_Mij, 2) To UBound(m_Mij, 2)
-      If j > i - tri - 1 And j < i + tri + 1 Then
+      If j >= i - tri And j <= i + tri Then
         MRandTriInteger.Mij(i, j) = RndBtwnInteger(min, max)
       Else
         MRandTriInteger.Mij(i, j) = 0
