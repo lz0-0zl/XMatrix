@@ -11,7 +11,7 @@ This project provides a set of VBA classes and modules for matrix operations and
   - Random matrix generation (integer/double, symmetric/banded)
   - Matrix arithmetic (add, subtract, multiply)
   - LU decomposition and linear system solving
-  - Eigenvalue approximation
+  - Eigenvalue and Eigenvector approximations
   - Utility functions (transpose, trace, symmetry check, etc.)
 
 - **Utilities.bas**: Helper functions for generating random numbers (integer and double) within specified bounds.
