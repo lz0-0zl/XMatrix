@@ -78,7 +78,7 @@ matA.MFromArray = arr
 
 ' Access internal matrix array
 Dim internalArr As Variant
-internalArr = matA.M
+internalArr = matA.MToArray
 
 ' Access single element
 Debug.Print "matA(1,1) value: "; matA.Mij(1, 1).Value & vbNewLine
@@ -124,8 +124,16 @@ Debug.Print "Characteristic Polynomial Coefficients of matA:"
 Debug.Print matA.MPolynom.ToString
 
 ' Eigenvalues of matA
-Debug.Print "Eigenvalues of matA:"
+Debug.Print "Eigenvalues of matA (QR-Algorithm):"
+Debug.Print matA.MEigenValuesQR.ToString
+
+' Eigenvalues of matA
+Debug.Print "Eigenvalues of matA (LU-Algorithm):"
 Debug.Print matA.MEigenValues.ToString
+
+' Eigenvalues of matA
+Debug.Print "Eigenvectors of matA:"
+Debug.Print matA.MEigenVectorsQR.ToString
 
 ' Transpose of matB
 Debug.Print "Transpose of matB:"
