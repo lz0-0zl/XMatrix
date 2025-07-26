@@ -1,4 +1,4 @@
-# XMatrix: VBA Matrix and Double Utility Classes
+# VBA Matrix and Double Utility Classes
 
 This project provides a set of VBA classes and modules for matrix operations and encapsulated double values, suitable for use in Excel or other VBA environments. It is designed for educational, scientific, and engineering applications where matrix computations are required.
 
