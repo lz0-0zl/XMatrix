@@ -1,0 +1,55 @@
+﻿'@Folder("Sheets")
+Option Explicit
+
+Private Const N As Integer = 10
+Private a() As Double
+Private b() As Double
+Private c() As Double
+
+Sub calculateXMatrix()
+Dim i As Integer
+
+fastOn
+' --- Erase ---
+ReDim a(1 To N, 1 To N)
+ReDim b(1 To N, 1 To 5)
+
+'======================
+' --- LINEAR SYSTEM ---
+'======================
+
+' --- Clean sheet ---
+formatNumbersWithFormula Me
+
+arrToRandDouble a, 1, 2, True
+arrToRandDouble b, 1, 2
+
+arrDump a, Me, 2, 2
+arrDump b, Me, 2, 2 + N + 1
+luSolverInPlace a, b
+
+arrDump b, Me, 2 + N + 1, 2
+
+'Exit Sub
+
+'======================
+' --- EIGVAL/EIGVEC ---
+'======================
+
+' --- Clean sheet ---
+formatNumbersWithFormula Me
+
+arrToRandDouble a, -1, 2, True
+
+arrEigenVectorsAndValues a, b, c
+
+arrDump a, Me, 2, 2
+arrDump b, Me, 2, 2 + N + 3
+arrDump c, Me, 2, 2 + N + 1
+
+'qrDecompose a, b, c
+'arrDump b, Me, 2, 2 + N + 3
+'arrDump c, Me, 2 + N + 1, 2 + N + 3
+
+fastOff
+End Sub
